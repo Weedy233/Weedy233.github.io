@@ -6,7 +6,7 @@
     <title>My Personal Blog</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -17,8 +17,28 @@
         header {
             background: #0078D7;
             color: #fff;
-            padding: 1rem 0;
+            padding: 2rem;
             text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            text-align: left;
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .header-decoration {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         .sidebar {
             width: 250px;
@@ -65,11 +85,15 @@
             cursor: pointer;
             z-index: 1000;
         }
-        footer {
-            background: #333;
-            color: #fff;
+        .footer-text {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             text-align: center;
-            padding: 1rem 0;
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -87,6 +111,7 @@
     <div class="main-content" id="main-content">
         <header>
             <h1>Welcome to My Blog</h1>
+            <div class="header-decoration"></div>
         </header>
         <div class="container" id="content">
             <div class="post">
@@ -94,9 +119,9 @@
                 <p>Welcome to my blog! This is my first post. Here, I will share my thoughts, ideas, and projects. Stay tuned!</p>
             </div>
         </div>
-        <footer>
-            <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
-        </footer>
+    </div>
+    <div class="footer-text">
+        &copy; 2024 My Personal Blog. All rights reserved.
     </div>
     <script>
         function toggleSidebar() {
