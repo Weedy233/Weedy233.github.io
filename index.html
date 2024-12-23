@@ -40,6 +40,7 @@
         .sidebar ul li {
             padding: 1rem;
             border-bottom: 1px solid #444;
+            cursor: pointer;
         }
         .sidebar ul li:hover {
             background: #575757;
@@ -55,7 +56,7 @@
         }
         .toggle-btn {
             position: fixed;
-            top: 1rem;
+            bottom: 1rem;
             left: 1rem;
             background: #0078D7;
             color: #fff;
@@ -76,25 +77,21 @@
     <button class="toggle-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
     <div class="sidebar" id="sidebar">
         <ul>
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Projects</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li onclick="navigateTo('home')">Home</li>
+            <li onclick="navigateTo('blog')">Blog</li>
+            <li onclick="navigateTo('projects')">Projects</li>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('contact')">Contact</li>
         </ul>
     </div>
     <div class="main-content" id="main-content">
         <header>
             <h1>Welcome to My Blog</h1>
         </header>
-        <div class="container">
+        <div class="container" id="content">
             <div class="post">
                 <h2>First Blog Post</h2>
                 <p>Welcome to my blog! This is my first post. Here, I will share my thoughts, ideas, and projects. Stay tuned!</p>
-            </div>
-            <div class="post">
-                <h2>About Me</h2>
-                <p></p>
             </div>
         </div>
         <footer>
@@ -107,6 +104,31 @@
             const mainContent = document.getElementById('main-content');
             sidebar.classList.toggle('collapsed');
             mainContent.classList.toggle('collapsed');
+        }
+
+        function navigateTo(section) {
+            const content = document.getElementById('content');
+            let html = '';
+            switch (section) {
+                case 'home':
+                    html = '<div class="post"><h2>Welcome Home</h2><p>This is the home section of the blog.</p></div>';
+                    break;
+                case 'blog':
+                    html = '<div class="post"><h2>Blog Posts</h2><p>Here are some blog posts.</p></div>';
+                    break;
+                case 'projects':
+                    html = '<div class="post"><h2>My Projects</h2><p>Here are details of my projects.</p></div>';
+                    break;
+                case 'about':
+                    html = '<div class="post"><h2>About Me</h2><p>This section contains information about me.</p></div>';
+                    break;
+                case 'contact':
+                    html = '<div class="post"><h2>Contact Me</h2><p>Here is how you can contact me.</p></div>';
+                    break;
+                default:
+                    html = '<div class="post"><h2>Section Not Found</h2><p>The section you are looking for does not exist.</p></div>';
+            }
+            content.innerHTML = html;
         }
     </script>
 </body>
