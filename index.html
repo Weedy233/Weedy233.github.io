@@ -1,1 +1,113 @@
-<h1>Hello，there👋</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+        }
+        header {
+            background: #0078D7;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .sidebar {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            height: 100vh;
+            overflow: auto;
+            transition: transform 0.3s ease;
+        }
+        .sidebar.collapsed {
+            transform: translateX(-250px);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 1rem;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar ul li:hover {
+            background: #575757;
+        }
+        .main-content {
+            margin-left: 250px;
+            width: 100%;
+            padding: 2rem;
+            transition: margin-left 0.3s ease;
+        }
+        .main-content.collapsed {
+            margin-left: 0;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: #0078D7;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>Blog</li>
+            <li>Projects</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="main-content" id="main-content">
+        <header>
+            <h1>Welcome to My Blog</h1>
+        </header>
+        <div class="container">
+            <div class="post">
+                <h2>First Blog Post</h2>
+                <p>Welcome to my blog! This is my first post. Here, I will share my thoughts, ideas, and projects. Stay tuned!</p>
+            </div>
+            <div class="post">
+                <h2>About Me</h2>
+                <p></p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('main-content');
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
