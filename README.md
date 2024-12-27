@@ -10,5 +10,8 @@ Create the site.
 **Dec.24th**
 Add favicon.ico(The figure is Ayase Aisa, my wife🥰)
 
+**Dec.26th**
+Adjust the page and add github button
+
 **Dec.27th**
 Built git env in local
