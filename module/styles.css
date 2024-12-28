@@ -1,0 +1,128 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+}
+header {
+    background: #E18A78;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+header h1 {
+    margin: 0;
+    text-align: left;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    transition: transform 0.3s ease;
+}
+.sidebar.collapsed {
+    transform: translateX(-250px);
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul li {
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+}
+.sidebar ul li:hover {
+    background: #575757;
+}
+.main-content {
+    margin-left: 250px;
+    width: 100%;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+.main-content.collapsed {
+    margin-left: 0;
+}
+.toggle-btn {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background: #0078D7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+.footer-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+}
+.home-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+.home-content p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem auto;
+}
+.github-btn:hover {
+    background: #575757;
+}
+.github-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+.markdown-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+pre, code {
+    background: #f4f4f4;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: monospace;
+}
+h2, h3, h4, h5, h6 {
+    color: #E18A78;
+}
