@@ -118,7 +118,24 @@
             height: 20px;
             margin-right: 0.5rem;
         }
+        .markdown-content {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+        pre, code {
+            background: #f4f4f4;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        h2, h3, h4, h5, h6 {
+            color: #E18A78;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <button class="toggle-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
@@ -126,20 +143,18 @@
         <ul>
             <li onclick="navigateTo('home')">Home</li>
             <li onclick="navigateTo('blog')">Blog</li>
-            <li onclick="navigateTo('projects')">Projects</li>
-            <li onclick="navigateTo('about')">About</li>
             <li onclick="navigateTo('contact')">Contact</li>
             <li onclick="showReadme()">View README</li>
         </ul>
     </div>
     <div class="main-content" id="main-content">
         <header>
-            <h1>Welcome to My Blog</h1>
+            <h1>Rikka's Blog</h1>
         </header>
         <div class="container" id="content">
             <div class="post home-content">
                 <img src="favicon.png" alt="Website Logo">
-                <p>This website is currently under construction. Stay tuned for updates!</p>
+                <p>This website is currently under construction... </p>
                 <a class="github-btn" href="https://github.com/Weedy233/Weedy233.github.io" target="_blank">
                     <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"> View on GitHub
                 </a>
@@ -163,13 +178,16 @@
             switch (section) {
                 case 'home':
                     html = `
+                    <div class="container" id="content">
                         <div class="post home-content">
                             <img src="favicon.png" alt="Website Logo">
-                            <p>This website is currently under construction. Stay tuned for updates!</p>
+                            <p>This website is currently under construction... </p>
                             <a class="github-btn" href="https://github.com/Weedy233/Weedy233.github.io" target="_blank">
                                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"> View on GitHub
                             </a>
-                        </div>`;
+                        </div>
+                    </div>
+                    `;
                     break;
                 // Add other cases for different sections...
                 default:
@@ -178,7 +196,7 @@
             content.innerHTML = html;
         }
 
-                function showReadme() {
+        function showReadme() {
             const content = document.getElementById('content');
             fetch('README.md')
                 .then(response => {
@@ -188,18 +206,15 @@
                     return response.text();
                 })
                 .then(readmeContent => {
+                    // 使用 Marked 渲染 Markdown 为 HTML
+                    const html = marked.parse(readmeContent);
                     content.innerHTML = `
-                        <div class="post">
-                            <h2>README.md</h2>
-                            <pre style="background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow: auto;">${readmeContent}</pre>
+                        <div class="markdown-content">
+                            ${html}
                         </div>`;
                 })
                 .catch(error => {
-                    content.innerHTML = `
-                        <div class="post">
-                            <h2>Error</h2>
-                            <p>${error.message}</p>
-                        </div>`;
+                    content.innerHTML = `<p>Error: ${error.message}</p>`;
                 });
         }
     </script>
