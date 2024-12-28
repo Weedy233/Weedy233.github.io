@@ -13,7 +13,7 @@ function navigateTo(section) {
             html = `
             <div class="container" id="content">
                 <div class="post home-content">
-                    <img src="favicon.png" alt="Website Logo">
+                    <img src="/module/favicon.png" alt="Website Logo">
                     <p>This website is currently under construction... </p>
                     <a class="github-btn" href="https://github.com/Weedy233/Weedy233.github.io" target="_blank">
                         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"> View on GitHub
