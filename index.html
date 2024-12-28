@@ -129,6 +129,7 @@
             <li onclick="navigateTo('projects')">Projects</li>
             <li onclick="navigateTo('about')">About</li>
             <li onclick="navigateTo('contact')">Contact</li>
+            <li onclick="showReadme()">View README</li>
         </ul>
     </div>
     <div class="main-content" id="main-content">
@@ -175,6 +176,31 @@
                     html = '<div class="post"><h2>Section Not Found</h2><p>The section you are looking for does not exist.</p></div>';
             }
             content.innerHTML = html;
+        }
+
+                function showReadme() {
+            const content = document.getElementById('content');
+            fetch('README.md')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch README.md');
+                    }
+                    return response.text();
+                })
+                .then(readmeContent => {
+                    content.innerHTML = `
+                        <div class="post">
+                            <h2>README.md</h2>
+                            <pre style="background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow: auto;">${readmeContent}</pre>
+                        </div>`;
+                })
+                .catch(error => {
+                    content.innerHTML = `
+                        <div class="post">
+                            <h2>Error</h2>
+                            <p>${error.message}</p>
+                        </div>`;
+                });
         }
     </script>
 </body>
