@@ -22,3 +22,4 @@ Built git env in local
 Fix some bugs
 Add contact page
 (Tomorrow is our high level math examination, but I am still work with the page...)
+And find a better version of the picture, so applied it:)
