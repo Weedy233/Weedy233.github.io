@@ -17,3 +17,8 @@ Adjust the page and add github button
 Built git env in local
 (Test: This is a test from github.com)
 (Test: This is a test from local)
+
+**Dec.30th**
+Fix some bugs
+Add contact page
+(Tomorrow is our high level math examination, but I am still work with the page...)
