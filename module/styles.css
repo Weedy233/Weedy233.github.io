@@ -21,6 +21,7 @@ header h1 {
     bottom: 10%;
     left: 5%;
     font-size: 2.5rem;
+    z-index: 10;
     font-weight: bold;
 }
 .sidebar {
@@ -31,6 +32,7 @@ header h1 {
     height: 100vh;
     overflow: auto;
     transition: transform 0.3s ease;
+    z-index: 999;
 }
 .sidebar.collapsed {
     transform: translateX(-250px);
@@ -71,13 +73,22 @@ header h1 {
 .footer-text {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    width: calc(100% + 250px); /* 默认宽度为主页面宽度减去侧边栏宽度 */
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     background: rgba(0, 0, 0, 0.7);
     padding: 0.5rem 0;
     font-size: 0.8rem;
+    z-index: 0;
+    transition: width 0.3s ease; /* 添加动画过渡效果 */
 }
+
+.sidebar.collapsed + .main-content + .footer-text {
+    width: 100%; /* 当侧边栏收起时，底栏宽度扩展为整个页面宽度 */
+    z-index: 0;
+}
+
 .home-content img {
     display: block;
     margin: 0 auto;
