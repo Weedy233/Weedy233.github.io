@@ -28,3 +28,7 @@ And find a better version of the picture, so applied it:)
 Optimize the structure of the site, adopted the template method
 Fix the bug of sidebar
 (Yes, today is the last day of 2024, but I am still work with the website alone. Haha...) 
+
+**Jan.1st**
+Happy year there!
+Add blog function, add adjust css file.
