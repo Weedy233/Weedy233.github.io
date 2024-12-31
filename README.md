@@ -27,3 +27,4 @@ And find a better version of the picture, so applied it:)
 **Dec.31**
 Optimize the structure of the site, adopted the template method
 Fix the bug of sidebar
+(Yes, today is the last day of 2024, but I am still work with the website alone. Haha...) 
