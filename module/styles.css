@@ -74,18 +74,18 @@ header h1 {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: calc(100% + 250px); /* 默认宽度为主页面宽度减去侧边栏宽度 */
+    width: calc(100% + 250px);
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
     background: rgba(0, 0, 0, 0.7);
     padding: 0.5rem 0;
     font-size: 0.8rem;
     z-index: 0;
-    transition: width 0.3s ease; /* 添加动画过渡效果 */
+    transition: width 0.3s ease; 
 }
 
 .sidebar.collapsed + .main-content + .footer-text {
-    width: 100%; /* 当侧边栏收起时，底栏宽度扩展为整个页面宽度 */
+    width: 100%; 
     z-index: 0;
 }
 
