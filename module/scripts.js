@@ -19,12 +19,33 @@ function navigateTo(section) {
         .then(html => {
             content.innerHTML = html;
         })
-        .catch(error => {
+        .catch(() => {
             fetch('module/templates/notfound.html')
                 .then(response => response.text())
                 .then(html => {
                     content.innerHTML = html;
                 });
+        });
+}
+
+function loadBlogArticle(filename) {
+    const content = document.getElementById('content');
+    fetch(`/Blog/${filename}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filename}`);
+            }
+            return response.text();
+        })
+        .then(markdownContent => {
+            const html = marked.parse(markdownContent); // 渲染 Markdown
+            content.innerHTML = `
+                <div class="markdown-content">
+                    ${html}
+                </div>`;
+        })
+        .catch(error => {
+            content.innerHTML = `<p>Error loading article: ${error.message}</p>`;
         });
 }
 
@@ -39,10 +60,7 @@ function showReadme() {
         })
         .then(readmeContent => {
             const html = marked.parse(readmeContent);
-            content.innerHTML = `
-                <div class="markdown-content">
-                    ${html}
-                </div>`;
+            content.innerHTML = `<div class="markdown-content">${html}</div>`;
         })
         .catch(error => {
             content.innerHTML = `<p>Error loading README.md: ${error.message}</p>`;

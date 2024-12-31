@@ -1,3 +1,6 @@
+/* =====================================
+   基础样式
+===================================== */
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -7,6 +10,10 @@ body {
     color: #333;
     display: flex;
 }
+
+/* =====================================
+   头部样式
+===================================== */
 header {
     background: #E18A78;
     color: #fff;
@@ -14,6 +21,7 @@ header {
     text-align: center;
     position: relative;
 }
+
 header h1 {
     margin: 0;
     text-align: left;
@@ -24,6 +32,10 @@ header h1 {
     z-index: 10;
     font-weight: bold;
 }
+
+/* =====================================
+   侧边栏样式
+===================================== */
 .sidebar {
     width: 250px;
     background: #333;
@@ -34,31 +46,68 @@ header h1 {
     transition: transform 0.3s ease;
     z-index: 999;
 }
+
 .sidebar.collapsed {
     transform: translateX(-250px);
 }
+
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .sidebar ul li {
     padding: 1rem;
     border-bottom: 1px solid #444;
     cursor: pointer;
 }
+
 .sidebar ul li:hover {
     background: #575757;
 }
+
+/* =====================================
+   主内容样式
+===================================== */
 .main-content {
     margin-left: 250px;
     width: 100%;
     padding: 2rem;
     transition: margin-left 0.3s ease;
 }
+
 .main-content.collapsed {
     margin-left: 0;
 }
+
+/* =====================================
+   底部栏样式
+===================================== */
+.footer-text {
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content + .footer-text {
+    left: 0;
+    width: 100%;
+}
+
+/* =====================================
+   按钮样式
+===================================== */
 .toggle-btn {
     position: fixed;
     bottom: 1rem;
@@ -70,36 +119,7 @@ header h1 {
     cursor: pointer;
     z-index: 1000;
 }
-.footer-text {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: calc(100% + 250px);
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-    background: rgba(0, 0, 0, 0.7);
-    padding: 0.5rem 0;
-    font-size: 0.8rem;
-    z-index: 0;
-    transition: width 0.3s ease; 
-}
 
-.sidebar.collapsed + .main-content + .footer-text {
-    width: 100%; 
-    z-index: 0;
-}
-
-.home-content img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-}
-.home-content p {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
 .github-btn {
     display: inline-flex;
     align-items: center;
@@ -113,14 +133,36 @@ header h1 {
     font-size: 1rem;
     margin: 1rem auto;
 }
+
 .github-btn:hover {
     background: #575757;
 }
+
 .github-btn img {
     width: 20px;
     height: 20px;
     margin-right: 0.5rem;
 }
+
+/* =====================================
+   首页内容样式
+===================================== */
+.home-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.home-content p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+/* =====================================
+   Markdown 渲染样式
+===================================== */
 .markdown-content {
     background: #fff;
     padding: 1rem;
@@ -128,12 +170,26 @@ header h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: auto;
 }
+
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    color: inherit;
+}
+
 pre, code {
     background: #f4f4f4;
     padding: 0.5rem;
     border-radius: 5px;
     font-family: monospace;
 }
+
+/* =====================================
+   标题样式
+===================================== */
 h2, h3, h4, h5, h6 {
     color: #E18A78;
 }
+
