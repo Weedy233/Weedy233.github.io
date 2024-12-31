@@ -23,3 +23,7 @@ Fix some bugs
 Add contact page
 (Tomorrow is our high level math examination, but I am still work with the page...)
 And find a better version of the picture, so applied it:)
+
+**Dec.31**
+Optimize the structure of the site, adopted the template method
+Fix the bug of sidebar
