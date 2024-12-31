@@ -9,7 +9,6 @@ function navigateTo(section) {
     const content = document.getElementById('content');
     const templatePath = `module/templates/${section}.html`;
 
-    // 动态加载模板文件
     fetch(templatePath)
         .then(response => {
             if (!response.ok) {
@@ -21,7 +20,6 @@ function navigateTo(section) {
             content.innerHTML = html;
         })
         .catch(error => {
-            // 加载错误页
             fetch('module/templates/notfound.html')
                 .then(response => response.text())
                 .then(html => {
@@ -51,6 +49,25 @@ function showReadme() {
         });
 }
 
+function checkScreenWidth() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+    const footerText = document.querySelector('.footer-text');
+
+    if (window.innerWidth <= 768) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('collapsed');
+        footerText.style.width = '100%';
+    } else {
+        sidebar.classList.remove('collapsed');
+        mainContent.classList.remove('collapsed');
+        footerText.style.width = 'calc(100% + 250px)';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    checkScreenWidth();
     navigateTo('home');
 });
+
+window.addEventListener('resize', checkScreenWidth);
