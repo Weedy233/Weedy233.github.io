@@ -5,15 +5,15 @@
 # Site
 title: "Weedy's Blog"
 subtitle: ''
-description: ''
-keywords:
-author: John Doe
+description: '这是我的个人技术博客，主要分享计算机科学、编程实践、技术学习过程以及相关经验，包括 C/C++、前端技术、Git 使用、服务器配置等内容。记录我的学习历程，分享实用技巧，帮助更多开发者成长。This is my personal tech blog, where I share my journey of learning computer science, programming practices, and technical experiences. Topics include C/C++, front-end technologies, Git usage, server configuration, and more. Documenting my learning process and sharing practical tips to help fellow developers grow.'
+keywords: 计算机科学、编程实践、技术博客、C语言、C++、嵌入式开发、前端技术、Git教程、服务器配置、Hexo博客、网站部署、Linux运维、Nginx、Cloudflare、开发者学习、开源项目、个人博客、技术分享、代码优化 Computer Science, Programming, Tech Blog, C Programming, C++, Embedded Development, Frontend Technologies, Git Tutorial, Server Configuration, Hexo Blog, Website Deployment, Linux Administration, Nginx, Cloudflare, Developer Learning, Open Source, Personal Blog, Tech Sharing, Code Optimization
+author: Weedy
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://blog.rikka.top
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
