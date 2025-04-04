@@ -1,7 +1,7 @@
-baseurl: https://example.com/
+baseurl: https://blog.riika.top/
 languageCode: zh-cn
 theme: hugo-theme-stack
-title: Example Site
+title: Weedy's Blog
 copyright: Blog@Weedy233
 
 # Theme i18n support
