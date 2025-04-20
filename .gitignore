@@ -1,6 +1,8 @@
 /.vscode
+.obsidian/
 
 /public
 /resources
 .hugo_build.lock
+
 /content/post/Test
