@@ -1,6 +1,6 @@
 {{ $vid := (.Get 0) }}
 {{ $videopage := default 1 (.Get 1) }}
-{{ $basicQuery := querify "page" $videopage "high_quality" 1 "as_wide" 1 }}
+{{ $basicQuery := querify "page" $videopage "high_quality" 1 "as_wide" 1 "autoplay" 0 }}
 {{ $videoQuery := "" }}
 
 {{ if strings.HasPrefix (lower $vid) "av" }}

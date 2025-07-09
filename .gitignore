@@ -1,5 +1,6 @@
 /.vscode
 .obsidian/
+.markdownlint.json
 
 /public
 /resources
