@@ -1,6 +1,6 @@
 baseurl: https://blog.riika.top/
 languageCode: zh-cn
-theme: hugo-theme-stack
+theme: [hugo-theme-stack, hugo-admonitions]
 title: Weedy's Blog
 copyright: Blog@Weedy233
 
@@ -69,7 +69,7 @@ params:
             src: img/avatar.png
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: true
         license:
@@ -144,8 +144,8 @@ params:
             category: "Announcements"
             categoryID: "DIC_kwDONgem684Cox5D"
             mapping: "pathname"
-            lightTheme: "light"
-            darkTheme: "dark_dimmed"
+            lightTheme: "noborder_light"
+            darkTheme: "noborder_gray"
             reactionsEnabled: 1
             emitMetadata: 0
 

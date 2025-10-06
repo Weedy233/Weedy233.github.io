@@ -9,7 +9,9 @@ categories:
 ---
 
 ## 搭建历程
+
 ### 2024
+
 - 12月21日<br>
   借助AI搭建了第一个demo，此时还在使用最基本的纯html
 
@@ -28,17 +30,21 @@ categories:
 - 12月31日<br>
   拆分文件，更改文件夹结构
 
-
 ### 2025
+
 - 1月1日<br>
-  添加了写文章的功能，实现了基本的markdown渲染
+  添加了写文章的功能，实现了基本的 markdown 渲染
 
 - 2月20日<br>
-  放弃手搓，决定使用Hexo，在当天完成了初始化和Github Actions配置
+  放弃手搓，决定使用 Hexo，在当天完成了初始化和 Github Actions 配置
 
 - 4月4日<br>
-  更换为更高效的Hugo，使用[stack](https://stack.jimmycai.com/)作为主题，配置好actions，测试文章渲染
+  更换为更高效的Hugo，使用 [stack](https://stack.jimmycai.com/) 作为主题，配置好actions，测试文章渲染
 
 - 4月6日<br>
   第一篇正式文章
 
+- 10月6日<br>
+  添加了 [hugo-admonitions](https://github.com/KKKZOZ/hugo-admonitions) 模块
+  > [!SUCCESS]
+  > 现在博客可以使用这种符合Github, Obsidian 规范的块引用了
