@@ -2,7 +2,6 @@
 title: 西南交通大学转专业指南
 date: 2025-10-06
 image: relayouter-iyowa.jpg
-draft: true
 categories:
   - 学校
   - 教程

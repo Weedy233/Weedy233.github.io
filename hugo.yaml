@@ -1,8 +1,11 @@
 baseurl: https://blog.riika.top/
 languageCode: zh-cn
-theme: [hugo-theme-stack, hugo-admonitions]
+theme: [hugo-theme-stack]
 title: Weedy's Blog
 copyright: Blog@Weedy233
+module:
+  imports:
+    - path: github.com/KKKZOZ/hugo-admonitions
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
