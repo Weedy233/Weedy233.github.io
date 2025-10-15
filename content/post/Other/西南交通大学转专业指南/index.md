@@ -10,7 +10,7 @@ categories:
 ## 前言
 
 > [!QUOTE]
-> ”雄关漫道真如铁，而今迈步从头越“ ——《忆秦娥·娄山关》
+> “雄关漫道真如铁，而今迈步从头越” ——《忆秦娥·娄山关》
 
 用一些话语，记录我从一个九月到另一个九月的故事。。。
 
@@ -81,7 +81,7 @@ categories:
 想了解转专业的要求，最直接的方法是查看目标学院往年的转入细则，如：
 
 > [!EXAMPLE]
-> 1. 在 [西南交通大学本科生院教学信息服务网](http://jwc.swjtu.edu.cn/index.html)中搜索”转专业“
+> 1. 在 [西南交通大学本科生院教学信息服务网](http://jwc.swjtu.edu.cn/index.html)中搜索“转专业”
 > 2. 查看类似[关于公布2025年各学院转专业实施细则的通知](http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&viewType=web&newsId=C21CF1D89ADA84EA)
 > 3. 点击查看目标学院的实施细则
 
