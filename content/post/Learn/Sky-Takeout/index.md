@@ -1,5 +1,5 @@
 ---
-title: 从苍穹外卖的 SSM 架构笔记
+title: 从苍穹外卖的 SSM 架构笔记，以及开发杂谈
 date: 2025-11-10
 image: logo.jpg
 categories:
@@ -20,12 +20,55 @@ categories:
 
 ## 技术栈
 
-- 核心： Spring Boot, Mybatis
-- 数据库：MySQL, Redis
-- 中间件/工具：Nginx(反代), WebSocket(消息推送), OpenAPI/Knife4j
+- 核心： Spring Boot
+- 持久层：MySQL, MyBatis
+- 中间件/工具： Redis, Nginx(反代), WebSocket(消息推送), OpenAPI/Knife4j
+- 配套框架：Vue(管理端前端), 微信小程序(用户端前端)
 - 开发环境：JDK 17 (Windows 11 x64), VSCode, Maven
 
 ## 项目内容
+
+### 项目分词结构图
+
+```goat
+    +---------------+
+    |    Client     |
+    | (Web/Applet)  |
+    +-------+-------+
+            |
+            | HTTP Request
+            v
+    +-------+-------+
+    |  Controller   | <-- 1. Receive Request & Parse DTO
+    +-------+-------+
+            |
+            v
+    +-------+-------+     +-------------+
+    |    Service    | <-> |    Redis    |
+    +-------+-------+     +-------------+
+    | Business Logic|      (Cache Layer)
+    +-------+-------+
+            |
+            v
+    +-------+-------+
+    |    Mapper     | <-- 2. Data Access (MyBatis)
+    +-------+-------+
+            |
+            | SQL
+            v
+    +-------+-------+
+    |     MySQL     | <-- 3. Persistent Storage
+    +---------------+
+```
+
+该项目涉及到的处理流程：
+
+1. 管理端/用户端通过 Http 请求向 SpringBoot 的 Controller 层发起请求
+2. Interceptor 拦截请求，当请求为动态方法，且 url 不在排除列表中(eg: 如员工/顾客登录接口，营业状态查询接口)，检验 token。校验成功则放行，否则返回 401
+3. 请求以 Query, Path Variables 或 Request Body 的方式传值进来，由 Controller 层接收
+4. Controller 在后端控制台记录日志，并调用 Service 层，
+5. Service 层处理主要逻辑，并在需要时调用 Redis 模板以及 Mapper 层，最后将结果返回至 Controller 层
+6. Controller 层使用 `Result.success(...)` 统一返回成功结果
 
 ### Maven 结构
 
@@ -38,7 +81,9 @@ categories:
 每个子项目有独立的 `pom.xml`，用于配置依赖
 主项目的 `pom.xml` 负责将子项目组合成整体，编译打包
 
-### 开发历程
+## 开发历程
+
+### 课程安排
 
 1. day1: 介绍，设置管理端前端，导入接口文档
 2. day2: 开发员管理端工管理、商品分类管理部分
@@ -53,9 +98,25 @@ categories:
 11. day11: 开发管理端数据统计功能
 12. day12: 开发管理端数据统计导出 excel 功能
 
+### 个人体验
+
+黑马给课程的后端安排了 12 天的课时，个人感受如果每天能投入 8-10 个小时全力开发（不借助 AI 填代码）应该能在这个时间内完成。
+但是由于学校以及个人事务，前后总共花了三十多天才全部写完，sad...
+
+![金句](image/index/1764688425673.png)
+
 ## 问题与解决
 
 ### 工程/代码相关
+
+#### 依赖注入
+
+太长不看（AI生成版）：Spring 容器基于反射机制（Reflection）与控制反转（IoC）原理，全权接管了 Bean 的生命周期管理与依赖关系的动态装配，实现了组件间的彻底解耦。
+
+- 问题：传统上需要使用Service, Mapper 等对象时，必须每次手动 new, 浪费资源且麻烦
+- 解决：Spring 通过两个手段来解决：
+  1. IoC (Inversion of Control，控制反转)：创建对象的控制权从程序员手里交给了 Spring 容器。你不再 new 对象，而是由容器在启动时统一创建并管理这些对象（Bean），在这个项目中，我们通常使用 `@Autowired` 注解来实现
+  2. DI (Dependency Injection，依赖注入)：这是 IoC 的具体实现方式。当 Controller 声明“我需要一个 Service”时，Spring 容器会自动把已经在内存里创建好的 Service 对象“注入”（赋值）到 Controller 的变量中
 
 #### 公共字段填充
 
@@ -64,6 +125,8 @@ categories:
   1. 通过编写 `AutoFill.java` 使用反射获取 Setter 方法，
   2. 在需要使用的 Mapper 接口加上 `@AutoFill(value = OperationType.<INSERT/UPDATE>)` 注解，
   3. 调用时自动实现公共字段自动填充
+
+#### 微信支付 mock
 
 - 问题：个人认证小程序无法使用支付功能，故无法完成需要订单提交功能的软件测试
 - 解决：
@@ -76,7 +139,7 @@ categories:
 
 - 问题：微信用户端查询分类下菜品时需频繁调用 Mapper 查询数据库，造成性能瓶颈
 - 解决：
-  1. 在 `config\` 中注册 redis 模板对象
+  1. 在 `config\` 中注册 redis 模板对象，并在 `SkyApplication.java` 中添加 `@EnableCaching` 注解
   2. 对查询方法使用 `@Cacheable` 注解，对修改或删除方法使用 `@CacheEvict` 注解
   3. 在方法中添加完成对 redis 的获取或更新删除操作
   4. （可选）配置 redis 序列化器
@@ -102,6 +165,11 @@ public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisC
 
 ![Valkey 的 Systemctl status](image/index/1764426204977.png)
 
-#### 超时订单自动处理
+#### 订单自动任务
 
-- 问题：
+- 问题：当用户端下单但迟迟不付款时，应当自动取消。以及当每天有积压的已派送但未完成的订单应统一处理
+- 解决：
+  1. 在 `SkyApplication.java` 中添加 `@EnableScheduling` 注解
+  2. 创建 `com.sky.task` 包，创建 `OrderTask` 类，一个任务对应一个方法
+  3. 对方法使用 `@Scheduled(cron = "0 * * * * ?")` 注解（可以在 [这个网站](https://cron.qqe2.com/)可视化编辑 cron 表达式）
+     项目中选择每分钟检查一次超时未付款订单，并将其取消。每天凌晨 1 点将已派送但未完成订单统一完成，代码实现可见 [OrderTask.java](https://github.com/Weedy233/Sky-Takeout-Backend/blob/706cd78afa75535203f670e6fc24bc6e3a1c905e/sky-server/src/main/java/com/sky/task/OrderTask.java#L22)
