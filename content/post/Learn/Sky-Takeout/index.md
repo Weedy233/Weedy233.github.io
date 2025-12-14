@@ -1,10 +1,11 @@
 ---
-title: 从苍穹外卖的 SSM 架构笔记，以及开发杂谈
-date: 2025-11-10
+title: 从苍穹外卖开始的 SSM 架构笔记以及开发杂谈
+date: 2025-11-29
 image: logo.jpg
 categories:
   - 后端
   - 就业
+  - SpringBoot
 ---
 ## 前言
 
@@ -25,6 +26,7 @@ categories:
 - 中间件/工具： Redis, Nginx(反代), WebSocket(消息推送), OpenAPI/Knife4j
 - 配套框架：Vue(管理端前端), 微信小程序(用户端前端)
 - 开发环境：JDK 17 (Windows 11 x64), VSCode, Maven
+- 容器化：Docker
 
 ## 项目内容
 
@@ -178,3 +180,7 @@ public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisC
   2. 创建 `com.sky.task` 包，创建 `OrderTask` 类，一个任务对应一个方法
   3. 对方法使用 `@Scheduled(cron = "0 * * * * ?")` 注解（可以在 [这个网站](https://cron.qqe2.com/)可视化编辑 cron 表达式）
      项目中选择每分钟检查一次超时未付款订单，并将其取消。每天凌晨 1 点将已派送但未完成订单统一完成，代码实现可见 [OrderTask.java](https://github.com/Weedy233/Sky-Takeout-Backend/blob/706cd78afa75535203f670e6fc24bc6e3a1c905e/sky-server/src/main/java/com/sky/task/OrderTask.java#L22)
+
+### 容器化
+
+（待补）
