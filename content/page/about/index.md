@@ -36,13 +36,13 @@ Vim 重度用户，VSCode, Obsidian 和 Idea 用的都是 Vim 模式，浏览器
   - [x] [CS 61A](https://cs61a.org/)
   - [x] [CS 61B](https://sp24.datastructur.es/)
   - [x] [CS 61C](https://cs61c.org/)
+  - [x] [CS 168](https://sp25.cs168.io/)
 
 - 正在学习：
-  - [ ] [CS 168](https://sp25.cs168.io/)
+  - [ ] [MIT 6.S081](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 
 - 计划学习:
   - [ ] [南大操作系统](https://jyywiki.cn/OS/2025/)
-  - [ ] [MIT 6.S081](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 
 - 搁置的:
   - [ ] [南大编译原理](http://docs.compilers.cpl.icu/#/2024/intro?id=%e6%95%99%e5%ad%a6%e5%91%a8%e5%8e%86)
@@ -75,10 +75,10 @@ Vim 重度用户，VSCode, Obsidian 和 Idea 用的都是 Vim 模式，浏览器
 
 ## 未来的打算
 
-1. 找个班上，可能是后端
+1. 找个班上，应该是后端
 
 2. 用 Go 做后端写一个时间统计 App
 
 ## 友链
 
-暂无（我要是有能和我挂友链的人就好了。。。sad😭）
+参见 [关于页](https://blog.rikka.top/links/)
