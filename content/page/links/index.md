@@ -5,13 +5,15 @@ links:
     description: SWJTU-Wiki 整合了在西南交通大学学习与生活之中的常用的信息，包括但不仅限于学习资源、推免资料、转专业资料、校内各项服务等。
     website: https://wiki.swjtu.top/
     image: https://s2.loli.net/2022/03/20/RSFO3MThHXdxqs4.png
-  - title: Sonnety
-    website: https://sonnety14.github.io/sonnety_blog
-    image: https://sonnety14.github.io/sonnety_blog/img/avatar_hue804880385fd343b8e94764d9d11d302_86320_300x0_resize_q75_box.jpg
   - title: 林理洵的blog
     website: https://myblog-virid-chi.vercel.app/
     image: https://myblog-virid-chi.vercel.app/1691750620739.png
-  
+  - title: Sonnety
+    website: https://sonnety14.github.io/sonnety_blog
+    image: https://sonnety14.github.io/sonnety_blog/img/avatar_hue804880385fd343b8e94764d9d11d302_86320_300x0_resize_q75_box.jpg
+  - title: AnCs-Lan
+    website: https://ancs-lan.github.io/
+    image: https://ancs-lan.github.io/img/avatar_hu_dfda9236a0863e11.jpg
 menu:
     main: 
         weight: -50
