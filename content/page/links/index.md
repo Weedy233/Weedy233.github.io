@@ -20,6 +20,9 @@ links:
     description: 出口はここです
     website: https://tsugihagidake.github.io/
     image: https://avatars.githubusercontent.com/u/269774824?v=4
+  - title: Spheniscidition
+    website: https://icarusfell.top/
+    image: https://icarusfell.top/images/avatar.jpg
 menu:
     main: 
         weight: -50
