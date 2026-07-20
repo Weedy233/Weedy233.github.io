@@ -6,7 +6,7 @@ aliases:
   - about-us
   - contact
 license: CC BY-NC-ND
-lastmod: '2025-11-04'
+lastmod: '2026-07-20'
 menu:
     main: 
         weight: -90
@@ -16,21 +16,23 @@ menu:
 
 ## 关于我
 
-目前大二在读的一名软件工程学生，主要学习内容是怎么打赛博螺丝（  ~~希望能把学校的课都逃了，但是目前还不敢~~
+目前大二在读的一名软件工程学生（快要变成大三老登力😭），主要学习内容是怎么打赛博螺丝
 
-平时话不多，但是有感兴趣的话题我会很能聊
+Vim 重度用户，~~双手离开键盘大脑会线程卡死。~~
 
-Vim 重度用户，VSCode, Obsidian 和 Idea 用的都是 Vim 模式，浏览器用的 [Vimium C](https://pdos.csail.mit.edu/6.828/2021/schedule.html) 插件，~~双手离开键盘大脑会线程卡死。~~
-
-闲下来会折腾一下博客，在服务器上搭建点东西什么的
-
-社交平台有两个头像，左边用在需要见人的地方，右边是明日方舟的[温蒂](https://prts.wiki/w/%E6%B8%A9%E8%92%82)，用在不需要见人的地方（
+社交平台有两个比较常见的头像，左边用在需要见人的地方，右边是明日方舟的[温蒂](https://prts.wiki/w/%E6%B8%A9%E8%92%82)，用在不需要见人的地方（何
 
 ![1762259022565](image/index/1762259022565.jpg) ![pid:81738748](image/index/1762259212256.png)
 
 ## 目前的学习
 
-现在在刷公开课补足基础知识
+技术：
+- 在学：
+  - Golang
+  - Vue/Nuxt, Tailwind CSS...
+  - k8s
+
+在刷公开课补足基础知识：
 - 已学完：
   - [x] [MIT-missing-semester](https://missing.csail.mit.edu/)
   - [x] [CS 61A](https://cs61a.org/)
@@ -41,30 +43,28 @@ Vim 重度用户，VSCode, Obsidian 和 Idea 用的都是 Vim 模式，浏览器
 - 正在学习：
   - [ ] [MIT 6.S081](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 
-- 计划学习:
-  - [ ] [南大操作系统](https://jyywiki.cn/OS/2025/)
+- 计划学习：
+  - [ ] [MIT 6.824](https://pdos.csail.mit.edu/6.824/schedule.html)
 
-- 搁置的:
+- 搁置的：
   - [ ] [南大编译原理](http://docs.compilers.cpl.icu/#/2024/intro?id=%e6%95%99%e5%ad%a6%e5%91%a8%e5%8e%86)
   - [ ] [CS 336](https://stanford-cs336.github.io/spring2025/)
 
-其他技术:
-- 在学:
-  - Java SSM(Spring, Spring MVC, Mybatis)
-  - Go
-  - torch
-
 ----------
 
-- Q: 最喜欢的语言？
+- Q: 用一句话描述自己？
 
-  A: [Go](https://go.dev/)
+  A: 不想做 infra 的全栈不是好安全（
 
-- Q: 最喜欢的编辑器？
+- Q: 最喜欢的语言？为什么呢？
+
+  A: [Go](https://go.dev/)。简洁有力
+
+- Q: 常用的开发环境？
   
-  A: VSCode，正在试图把生活万物（作业，开发，笔记等）全部整合进 VSCode 里
+  A: 编辑器，我只选 VSCode（逃）。目前在用 CachyOS， ~~ fedora 在逃人员 ~~
 
-- Q: 你认为你目前做过的最有成就感的项目是什么？
+- Q: 你认为目前做过的最有成就感的项目是什么？
 
   A: CS61C课程里，用 logisim 手搓了一个CPU
 
@@ -72,13 +72,16 @@ Vim 重度用户，VSCode, Obsidian 和 Idea 用的都是 Vim 模式，浏览器
 
 - 看动画
 - 推视觉小说 ~~（实际GALGAME）~~ ， [是 key 厨](https://music.163.com/playlist?id=13026368771&uct2=U2FsdGVkX1+WWQtMjx9YZ+9jHOoB2K13LVDYFaL0w6E=)
+- ボカロ（
 
 ## 未来的打算
 
-1. 找个班上，应该是后端
+1. 找个班上，应该是全栈
 
-2. 用 Go 做后端写一个时间统计 App
+2. ~~用 Go 做后端写一个时间统计 App~~，咕咕咕了（逃）
 
-## 友链
+3. 给社团写一个能用的 CTF 靶场，在学校里用 k8s 部署，SLA 能到一个 9 就算成功）
 
-参见 [关于页](https://blog.rikka.top/links/)
+## 朋友们
+
+参见 [链接页](https://blog.rikka.top/links/)
