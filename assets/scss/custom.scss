@@ -1,0 +1,27 @@
+/* Site background overlay */
+
+:root {
+    --site-bg-image: url("/global-background-1.webp");
+    --site-bg-mask: rgba(244, 244, 245, 0.86);
+    --article-details-bg: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-scheme="dark"] {
+    --site-bg-mask: rgba(9, 9, 11, 0.88);
+    --article-details-bg: rgba(24, 24, 27, 0.9);
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(var(--site-bg-mask), var(--site-bg-mask)),
+        var(--site-bg-image) center / cover fixed no-repeat;
+}
+
+.article-list > article {
+    background-color: transparent;
+}
+
+.article-list > article > .article-header > .article-details {
+    background: var(--article-details-bg);
+}

@@ -1,4 +1,4 @@
-$defaultTagBackgrounds: #8ea885, #df7988, #0177b8, #ffb900, #6b69d6;
+$defaultTagBackgrounds: #a1a1aa, #71717a, #52525b, #3f3f46, #27272a;
 $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
 /*
@@ -11,27 +11,39 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
         --main-top-padding: 50px;
     }
 
-    --body-background: #EAEAED;
+    --body-background: #f4f4f5;
+    /* zinc-100 */
 
-    --accent-color: #34495e;
-    --accent-color-darker: #2c3e50;
-    --accent-color-text: #fff;
-    --body-text-color: #707070;
+    --accent-color: #3f3f46;
+    /* zinc-700 */
+    --accent-color-darker: #27272a;
+    /* zinc-800 */
+    --accent-color-text: #ffffff;
+    /* white */
+    --body-text-color: #71717a;
+    /* zinc-500 */
 
     --tag-border-radius: 4px;
 
     --section-separation: 40px;
 
-    --scrollbar-thumb: hsl(0, 0%, 85%);
+    --scrollbar-thumb: #d4d4d8;
+    /* zinc-300 */
     --scrollbar-track: var(--body-background);
 
     &[data-scheme="dark"] {
-        --body-background: #1C1B22;
-        --accent-color: #ecf0f1;
-        --accent-color-darker: #bdc3c7;
-        --accent-color-text: #000;
-        --body-text-color: rgba(255, 255, 255, 0.7);
-        --scrollbar-thumb: hsl(0, 0%, 40%);
+        --body-background: #09090b;
+        /* zinc-950 */
+        --accent-color: #e4e4e7;
+        /* zinc-200 */
+        --accent-color-darker: #a1a1aa;
+        /* zinc-400 */
+        --accent-color-text: #09090b;
+        /* zinc-950 */
+        --body-text-color: #a1a1aa;
+        /* zinc-400 */
+        --scrollbar-thumb: #52525b;
+        /* zinc-600 */
         --scrollbar-track: var(--body-background);
     }
 }
@@ -51,13 +63,19 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Card style
 */
 :root {
-    --card-background: #fff;
-    --card-background-selected: #eaeaea;
+    --card-background: #ffffff;
+    /* white */
+    --card-background-selected: #e4e4e7;
+    /* zinc-200 */
 
-    --card-text-color-main: #000;
-    --card-text-color-secondary: #747474;
-    --card-text-color-tertiary: #767676;
-    --card-separator-color: rgba(218, 218, 218, 0.5);
+    --card-text-color-main: #18181b;
+    /* zinc-900 */
+    --card-text-color-secondary: #71717a;
+    /* zinc-500 */
+    --card-text-color-tertiary: #a1a1aa;
+    /* zinc-400 */
+    --card-separator-color: #e4e4e7;
+    /* zinc-200 */
 
     --card-border-radius: 10px;
 
@@ -78,12 +96,18 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     }
 
     &[data-scheme="dark"] {
-        --card-background: #2f2f2f;
-        --card-background-selected: rgba(255, 255, 255, 0.16);
-        --card-text-color-main: rgba(255, 255, 255, 0.9);
-        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
-        --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
-        --card-separator-color: rgba(255, 255, 255, 0.12);
+        --card-background: #18181b;
+        /* zinc-900 */
+        --card-background-selected: #27272a;
+        /* zinc-800 */
+        --card-text-color-main: #f4f4f5;
+        /* zinc-100 */
+        --card-text-color-secondary: #a1a1aa;
+        /* zinc-400 */
+        --card-text-color-tertiary: #71717a;
+        /* zinc-500 */
+        --card-separator-color: #3f3f46;
+        /* zinc-700 */
     }
 }
 
@@ -106,33 +130,47 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 */
 :root {
     --blockquote-border-size: 4px;
-    --blockquote-background-color: rgb(248 248 248);
+    --blockquote-background-color: #f4f4f5;
+    /* zinc-100 */
 
     --heading-border-size: 4px;
 
-    --link-background-color: 189, 195, 199;
+    /* RGB format for rgba() usage, matched to zinc-300 */
+    --link-background-color: 212, 212, 216;
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --pre-background-color: #272822;
-    --pre-text-color: #f8f8f2;
+    --pre-background-color: #18181b;
+    /* zinc-900 */
+    --pre-text-color: #f4f4f5;
+    /* zinc-100 */
 
-    --code-background-color: rgba(0, 0, 0, 0.12);
-    --code-text-color: #808080;
+    --code-background-color: #e4e4e7;
+    /* zinc-200 */
+    --code-text-color: #52525b;
+    /* zinc-600 */
 
-    --table-border-color: #dadada;
-    --tr-even-background-color: #efefee;
+    --table-border-color: #d4d4d8;
+    /* zinc-300 */
+    --tr-even-background-color: #f4f4f5;
+    /* zinc-100 */
 
-    --kbd-border-color: #dadada;
+    --kbd-border-color: #d4d4d8;
+    /* zinc-300 */
 
     &[data-scheme="dark"] {
-        --code-background-color: #272822;
-        --code-text-color: rgba(255, 255, 255, 0.9);
+        --code-background-color: #27272a;
+        /* zinc-800 */
+        --code-text-color: #e4e4e7;
+        /* zinc-200 */
 
-        --table-border-color: #717171;
-        --tr-even-background-color: #545454;
+        --table-border-color: #3f3f46;
+        /* zinc-700 */
+        --tr-even-background-color: #27272a;
+        /* zinc-800 */
 
-        --blockquote-background-color: rgb(75 75 75);
+        --blockquote-background-color: #27272a;
+        /* zinc-800 */
     }
 }
 
@@ -149,14 +187,18 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #272822;
+    --pre-text-color: #27272a;
+    /* zinc-800 */
     --pre-background-color: #fafafa;
+    /* zinc-50 */
     @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: #272822;
+    --pre-text-color: #f4f4f5;
+    /* zinc-100 */
+    --pre-background-color: #18181b;
+    /* zinc-900 */
     @import "partials/highlight/dark.scss";
 }
 

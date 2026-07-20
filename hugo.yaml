@@ -1,5 +1,5 @@
 baseurl: https://blog.riika.top/
-languageCode: zh-cn
+locale: zh-cn
 theme: [hugo-theme-stack]
 title: Weedy's Blog
 copyright: Blog@Weedy233
@@ -24,7 +24,7 @@ languages:
     #         sidebar:
     #             subtitle: Example description
     zh-cn:
-        languageName: 中文
+        label: 中文
         title: Weedy's Blog
         weight: 2
         params:
@@ -37,8 +37,6 @@ services:
     disqus:
         shortname: "hugo-theme-stack"
     # GA Tracking ID
-    googleAnalytics:
-        id:
 
 pagination:
     pagerSize: 5
