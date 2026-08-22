@@ -23,6 +23,9 @@ links:
   - title: Spheniscidition
     website: https://icarusfell.top/
     image: https://icarusfell.top/images/avatar.jpg
+  - title: lyr1s
+    website: https://blog.lyr1s.com/
+    image: https://blog.lyr1s.com/img/avatar.jpg
 menu:
     main: 
         weight: -50
